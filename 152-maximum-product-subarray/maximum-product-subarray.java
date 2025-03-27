@@ -1,8 +1,8 @@
 class Solution {
     public int maxProduct(int[] nums) {
-        int leftProduct = 1;
-        int rightProduct = 1;
-        int ans =  nums[0];
+        double leftProduct = 1;
+        double rightProduct = 1;
+        double ans =  nums[0];
         for(int i=0;i<nums.length;i++){
             if(leftProduct==0){
                 leftProduct=1;
@@ -14,6 +14,6 @@ class Solution {
             rightProduct = rightProduct * nums[nums.length-i-1];
             ans  = Math.max(ans,Math.max(leftProduct,rightProduct));
         }
-        return ans;
+        return (int)ans;
     }
 }
